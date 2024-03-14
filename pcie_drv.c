@@ -18,8 +18,7 @@ static int __init dev_probe(struct pci_dev *dev, const struct pci_device_id *id)
 
 static void __exit dev_remove(struct pci_dev *dev) 
 {
-    int rc = 0;
-    return rc;
+    return;
 }
 static struct pci_driver dev_ops = {
     .name = DEV_DRIVER_NAME,
