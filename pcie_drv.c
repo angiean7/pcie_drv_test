@@ -12,7 +12,7 @@ static struct pci_device_id pci_ids[] = {
 { 0 }
 };
 
-static struct pci_driver dfb_ops = {
+static struct pci_driver dev_ops = {
     .name = DEV_DRIVER_NAME,
     .id_table = pci_ids,
     .probe = dev_probe,
@@ -22,7 +22,16 @@ static struct pci_driver dfb_ops = {
 static int anqi_init(void)
 {
     printk(KERN_INFO"Hello World enter 20240314\n");
-    return 0;
+    int rc = 0;
+
+    rc = pci_register_driver(&dev_ops);
+    if (rc) {
+        printk(KERN_ERR DEV_DRIVER_NAME ": PCI driver registration failed\n");
+        goto exit;
+    }
+
+exit:
+    return rc;
 }
 
 static void anqi_exit(void)
