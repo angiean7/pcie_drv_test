@@ -1,0 +1,1 @@
+cmd_/home/inuineko/anqi/pcie_drv_test/pcie_drv.ko := ld -r -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/arm64/module.lds -o /home/inuineko/anqi/pcie_drv_test/pcie_drv.ko /home/inuineko/anqi/pcie_drv_test/pcie_drv.o /home/inuineko/anqi/pcie_drv_test/pcie_drv.mod.o;  true
