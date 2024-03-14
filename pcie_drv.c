@@ -11,7 +11,7 @@ static int hello_init(void)
 
 static void hello_exit(void)
 {
-    printk(KERN_INFO"Hello World exit\n ");
+    printk(KERN_INFO"Hello World exit 20240314\n ");
 }
 
 module_init(hello_init);
