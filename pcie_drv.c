@@ -29,8 +29,8 @@ static struct pci_driver dev_ops = {
 
 static int anqi_init(void)
 {
-    printk(KERN_INFO"Hello World enter 20240314\n");
     int rc = 0;
+    printk(KERN_INFO"Hello World enter 20240314\n");
 
     rc = pci_register_driver(&dev_ops);
     if (rc) {
