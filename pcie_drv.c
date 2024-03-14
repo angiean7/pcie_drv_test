@@ -1,23 +1,29 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
-MODULE_LICENSE("GPL");
+static struct pci_driver dfb_ops = {
+    .name = DFB_DEV_DRIVER_NAME,
+    .id_table = pci_ids,
+    .probe = dfb_dev_probe,
+    .remove = dfb_dev_remove,
+};
 
-static int hello_init(void)
+static int anqi_init(void)
 {
-    printk(KERN_INFO"Hello World enter\n");
+    printk(KERN_INFO"Hello World enter 20240314\n");
     return 0;
 }
 
-static void hello_exit(void)
+static void anqi_exit(void)
 {
     printk(KERN_INFO"Hello World exit 20240314\n ");
 }
 
-module_init(hello_init);
-module_exit(hello_exit);
+module_init(anqi_init);
+module_exit(anqi_exit);
 
-MODULE_AUTHOR("hi");
-MODULE_DESCRIPTION("hello");
-MODULE_ALIAS("world");
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("an.qi");
+MODULE_DESCRIPTION("test_module");
+MODULE_VERSION("V1.0");
 
