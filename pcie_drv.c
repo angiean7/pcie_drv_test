@@ -1,17 +1,23 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
-static int __init dev_probe(struct pci_dev *dev, const struct pci_device_id *id)
-{}
-
-static void __exit dev_remove(struct pci_dev *dev) 
-{}
 
 static struct pci_device_id pci_ids[] = {
 { PCI_DEVICE(DEV_VID, DEV_DID) },
 { 0 }
 };
 
+static int __init dev_probe(struct pci_dev *dev, const struct pci_device_id *id)
+{
+    int rc = 0;
+    return rc;
+}
+
+static void __exit dev_remove(struct pci_dev *dev) 
+{
+    int rc = 0;
+    return rc;
+}
 static struct pci_driver dev_ops = {
     .name = DEV_DRIVER_NAME,
     .id_table = pci_ids,
